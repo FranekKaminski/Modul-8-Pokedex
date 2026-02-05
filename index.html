@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./img/pokeball.png" type="image/x-icon">
+</head>
+
+<body onload="load()">
+    <header class="width-control">
+        <div class="logoarea">
+            <img src="./img/pokeball.png" alt="Book Logo">
+            <h1 tabindex="0">Pokedex</h1>
+        </div>
+        <input id="pokesearch" type="text" placeholder="Search for a Pokemon...">
+    </header>
+
+    <main>
+        <div id="books" class="width-control firstdiv">
+        </div>
+    </main>
+
+    <footer>
+        <img src="./img/da_logo.png" alt="Developer Akademie Logo">
+    </footer>
+</body>
+<script src="./script.js"></script>
+<script src="./db.js"></script>
+<script src="./template.js"></script>
+<script src="scriptapi.js"></script>
+
+</html>

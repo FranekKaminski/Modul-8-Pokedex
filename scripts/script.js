@@ -1,60 +1,27 @@
-let userName = "Franek"
+let pokemons = []
 
 function load() {
-    renderBooks()
+    renderPokemon()
+    fetchData()
 }
 
-function renderBooks() {
-    let contentRef = document.getElementById("books");
+async function fetchData() {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+    const data = await response.json();
+    const detailPromises = data.results.map(pokemon =>
+        fetch(pokemon.url).then(res => res.json())
+    );
+
+    pokemons = await Promise.all(detailPromises);
+    window.pokemons = pokemons;
+    renderPokemon();
+}
+
+function renderPokemon() {
+    let contentRef = document.getElementById("pokemoncontainer");
     contentRef.innerHTML = "";
 
-    for (let i = 0; i < books.length; i++) {
-        contentRef.innerHTML += bookTemplate(i);
+    for (let i = 0; i < pokemons.length; i++) {
+        contentRef.innerHTML += pokemonTemplate(i);
     }
-}
-
-function renderHeartIcon(i) {
-    if (books[i].liked) {
-        return "./img/heartfilled.png"
-    } else {
-        return "./img/heartoutline.png"
-    }
-}
-
-function likeBook(i, heartImg) {
-    let likesText = heartImg.previousElementSibling;
-
-    if (books[i].liked) {
-        books[i].likes--
-    } else {
-        books[i].likes++
-    }
-    books[i].liked = !books[i].liked;
-    
-    likesText.innerText = books[i].likes;
-    heartImg.src = renderHeartIcon(i);
-}
-
-function sendComment(i) {
-    let inputRef = document.getElementById(`commentinput${i}`);
-    if (inputRef.value != "") {
-        books[i].comments.unshift({
-            "name": userName,
-            "comment": inputRef.value
-        })
-        renderBooks();
-    }
-}
-
-function getCommentsTemplate(i) {
-    let htmlText = "";
-    for (let x = 0; x < books[i].comments.length; x++) {
-        const comment = books[i].comments[x];
-        htmlText += `<div class="single_comment">
-        <p>${comment.name}:</p><p> ${comment.comment} </p></div>`
-    }
-    if(htmlText == ""){
-        return "Bisher keine Kommentare..."
-    }
-    return htmlText;
 }

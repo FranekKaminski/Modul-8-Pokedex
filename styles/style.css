@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Figtree", sans-serif;
     color: white;
+    scrollbar-width: thin;
 }
 
 html,
@@ -17,44 +18,15 @@ body {
     min-height: 100vh;
 }
 
-header {
-    width: 100%;
-    height: 80px;
-    background: #1b252f;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logoarea {
-    display: flex;
-    margin-left: 20px;
-}
-
-header input {
-    width: 220px;
-    margin-right: 20px;
-}
-
-h1 {
-    margin-left: 10px;
-}
-
-header img {
-    height: 40px;
-}
-
 /* MAIN CONTENT */
 
 main {
-    background: url(./img/background.jpg);
+    background: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     flex: 1;
+    margin-top: 80px;
 }
 
 .firstdiv {
@@ -68,8 +40,10 @@ main {
 .books {
     height: 600px;
     width: 350px;
-    background-color: #1b252f;
+    background-color: #121f2d;
     border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.762);
+    box-shadow: 0px 0px 15px -1px #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,18 +81,8 @@ h2 {
 .blueline {
     width: 100%;
     height: 2px;
-    background-color: #6bc1e1;
+    background-color: #ffffff;
     margin: 15px 0px 15px 0px;
-}
-
-footer {
-    width: 100%;
-    height: 100px;
-    background: #1b252f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
 }
 
 .description {
@@ -165,11 +129,13 @@ table {
 }
 
 input {
-    background-color: #124658;
+    background-color: white;
+    color: black;
     border: none;
-    border-bottom: 2px solid #6bc1e1;
     padding: 5px;
     width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 min(1.0666666667vw, 4px) #A5A9B5;
 }
 
 input::placeholder {
@@ -224,40 +190,4 @@ input:focus {
     display: block;
     flex-shrink: 0;
     width: 124px;
-}
-
-/* RESPONSIVE */
-.width-control {
-    padding-left: calc(50% - 720px);
-    padding-right: calc(50% - 720px);
-}
-
-@media(max-width: 540px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    header img {
-        width: 25px;
-        height: auto;
-    }
-
-    header input {
-        width: 200px;
-    }
-}
-
-@media(max-width: 370px) {
-    h1 {
-        font-size: 16px;
-    }
-
-    header img {
-        width: 20px;
-        height: auto;
-    }
-
-    header input {
-        width: 150px;
-    }
 }

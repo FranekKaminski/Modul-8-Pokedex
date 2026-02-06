@@ -5,6 +5,7 @@ function load() {
     fetchData()
 }
 
+// API AWAIT RESPONSE
 async function fetchData() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
     const data = await response.json();
@@ -17,6 +18,7 @@ async function fetchData() {
     renderPokemon();
 }
 
+// RENDER 20 POKEMON
 function renderPokemon() {
     let contentRef = document.getElementById("pokemoncontainer");
     contentRef.innerHTML = "";
@@ -25,3 +27,17 @@ function renderPokemon() {
         contentRef.innerHTML += pokemonTemplate(i);
     }
 }
+
+// SEARCH BAR
+function filterPokemon(event) {
+    const searchTerm = event.target.value.trim().toLowerCase();
+    const listItems = document.querySelectorAll(".pokemon");
+    listItems.forEach(function (item) {
+        item.style.display = "flex";
+        if (!item.innerText.includes(searchTerm)) {
+            item.style.display = "none";
+        }
+    })
+}
+
+// LOAD MORE

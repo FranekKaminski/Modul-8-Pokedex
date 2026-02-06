@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./styles/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="./img/pokeball.png" type="image/x-icon">
 </head>
@@ -22,7 +23,7 @@
             <img src="./img/pokeball.png" alt="Book Logo">
             <h1 tabindex="0">Pokedex</h1>
         </div>
-        <input id="pokesearch" type="text" placeholder="Search for a Pokemon...">
+        <input oninput="filterPokemon(event)" id="pokesearch" type="search" placeholder="Search for a Pokemon...">
     </header>
 
     <main>
@@ -48,6 +49,6 @@
     </footer>
 </body>
 <script src="./scripts/script.js"></script>
-<script src="./scripts/db.js"></script>
 <script src="./scripts/template.js"></script>
+
 </html>

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/dialog.css">
+    <link rel="stylesheet" href="./styles/pokemoncolors.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,6 +27,60 @@
         </div>
         <input oninput="filterPokemon(event)" id="pokesearch" type="search" placeholder="Search for a Pokemon...">
     </header>
+
+    <dialog id="myDialog" onkeydown="handleKeys(event)">
+        <div class="dialogwrapper">
+            <nav class="dialognav">
+                <p tabindex="0" id="pokemonName"></p>
+                <button class="closebuttonbg" onclick="closePokemon()">
+                    <img class="closebutton" src="./img/close.png" alt="Close Button">
+                </button>
+            </nav>
+            <div class="fixedimageheight" id="fixedimageheight">
+                <img id="zoomedpokemon" class="bild1zoom" src="" alt="Zoomed Pokemon">
+            </div>
+            <section class="pokemondetails" id="pokemondetails">
+                <button onclick="changeToTab('main')" id="main" class="tab_btn tab_btn_active">main</button>
+                <button onclick="changeToTab('stats')" id="stats" class="tab_btn">stats</button>
+                <button onclick="changeToTab('evo_chain')" id="evo_chain" class="tab_btn">evo chain</button>
+            </section>
+            <div class="pokemoncontent" id="pokemoncontent">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Height</td>
+                            <td>:</td>
+                            <td>0.3 m</td>
+                        </tr>
+                        <tr>
+                            <td>Weight:</td>
+                            <td>:</td>
+                            <td>2.9 kg</td>
+                        </tr>
+                        <tr>
+                            <td>Base esperience</td>
+                            <td>:</td>
+                            <td>39</td>
+                        </tr>
+                        <tr>
+                            <td>Abilities</td>
+                            <td>:</td>
+                            <td>shield-dust,run-away</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <section class="dialogfooter">
+                <button id="previouspokemon" class="arrowcontainer" onclick="previousPokemon()">
+                    <img src="./img/left.svg" alt="Previous Button">
+                </button>
+                <p id="pokemoncounter"></p>
+                <button id="nextpokemon" class="arrowcontainer" onclick="nextPokemon()">
+                    <img src="./img/right.svg" alt="Next Button">
+                </button>
+            </section>
+        </div>
+    </dialog>
 
     <main>
         <div id="pokemoncontainer" class="width-control firstdiv">
@@ -50,5 +106,6 @@
 </body>
 <script src="./scripts/script.js"></script>
 <script src="./scripts/template.js"></script>
+<script src="./scripts/dialog.js"></script>
 
 </html>

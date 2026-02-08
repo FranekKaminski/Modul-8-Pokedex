@@ -1,0 +1,152 @@
+dialog {
+    background: #09212A;
+    border-radius: 40px;
+    border: none;
+    color: black;
+    font-size: 24px;
+    padding: 0px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.698);
+}
+
+dialog:focus {
+    outline: none;
+    border: none;
+}
+
+.dialogwrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(180deg, #FFF 0%, #F6F8FC 28%, #DDE7F5 72%);
+}
+
+.fixedimageheight {
+    height: 400px;
+    width: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bild1zoom {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.closebutton {
+    width: 14px;
+    transition: 0.3s;
+}
+
+.closebuttonbg {
+    transition: 0.3s;
+    border-radius: 100px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closebuttonbg:hover {
+    background: rgba(18, 70, 88);
+    cursor: pointer;
+}
+
+.closebuttonbg:focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 4px;
+}
+
+
+.dialognav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.dialognav p {
+    color: black;
+}
+
+.dialogfooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    margin-top: 45px;
+    font-size: 18px;
+}
+
+.dialogfooter p {
+    color: black;
+}
+
+.arrowcontainer {
+    background: rgba(253, 91, 79, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.arrowcontainer:hover {
+    background: rgba(253, 91, 79, 0.2);
+    cursor: pointer;
+}
+
+.arrowcontainer:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 4px;
+}
+
+button {
+    all: unset;
+}
+
+.pokemoncontent {
+    background: grey;
+    height: 150px;
+    width: 100%;
+}
+
+.pokemondetails {
+    background: rgb(218, 122, 122);
+    height: 50px;
+    width: 100%;
+}
+
+.tab_btn {
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    border: unset;
+    flex: 1;
+    padding: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab_btn:hover {
+    cursor: pointer;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.tab_btn_active {
+    border-bottom: 2px solid var(--prime_red);
+}

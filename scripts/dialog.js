@@ -24,7 +24,7 @@ function updateDialogImage() {
     const p = pokemons[currentPokemonIndex];
     zoomedPokemon.src = getImageSource(p);
     imageCounter.innerHTML = `${currentPokemonIndex + 1} / ${pokemons.length}`;
-    pokemonName.innerHTML = `#${p.id} ${p.name}`;
+    pokemonName.innerHTML = `#${p.id} ${capitalize(p.name)}`;
     updateTypeClass(p);
 }
 
@@ -32,6 +32,7 @@ function updateDialogImage() {
 function inspectPokemon(index) {
     currentPokemonIndex = index;
     updateDialogImage();
+    changeToTab("main");
     dialogRef.showModal();
 }
 
@@ -51,6 +52,9 @@ function nextPokemon() {
     if (!window.pokemons || pokemons.length === 0) return;
     currentPokemonIndex = (currentPokemonIndex + 1) % pokemons.length;
     updateDialogImage();
+    // Refresh tab content for the new pokemon
+    const activeTab = document.querySelector(".tab_btn_active");
+    if (activeTab) changeToTab(activeTab.id);
 }
 
 // PREVIOUS POKEMON
@@ -58,6 +62,9 @@ function previousPokemon() {
     if (!window.pokemons || pokemons.length === 0) return;
     currentPokemonIndex = (currentPokemonIndex - 1 + pokemons.length) % pokemons.length;
     updateDialogImage();
+    // Refresh tab content for the new pokemon
+    const activeTab = document.querySelector(".tab_btn_active");
+    if (activeTab) changeToTab(activeTab.id);
 }
 
 // DIALOG NEXT, PREVIOUS AND EXIT PROKEMON WITH KEYBOARD

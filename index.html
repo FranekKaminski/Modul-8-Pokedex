@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/responsive.css">
     <link rel="stylesheet" href="./styles/dialog.css">
     <link rel="stylesheet" href="./styles/pokemoncolors.css">
+    <link rel="stylesheet" href="./styles/loading.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -40,35 +41,11 @@
                 <img id="zoomedpokemon" class="bild1zoom" src="" alt="Zoomed Pokemon">
             </div>
             <section class="pokemondetails" id="pokemondetails">
-                <button onclick="changeToTab('main')" id="main" class="tab_btn tab_btn_active">main</button>
-                <button onclick="changeToTab('stats')" id="stats" class="tab_btn">stats</button>
-                <button onclick="changeToTab('evo_chain')" id="evo_chain" class="tab_btn">evo chain</button>
+                <button onclick="changeToTab('main')" id="main" class="tab_btn tab_btn_active">Main</button>
+                <button onclick="changeToTab('stats')" id="stats" class="tab_btn">Stats</button>
+                <button onclick="changeToTab('evo_chain')" id="evo_chain" class="tab_btn">Evo chain</button>
             </section>
             <div class="pokemoncontent" id="pokemoncontent">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Height</td>
-                            <td>:</td>
-                            <td>0.3 m</td>
-                        </tr>
-                        <tr>
-                            <td>Weight:</td>
-                            <td>:</td>
-                            <td>2.9 kg</td>
-                        </tr>
-                        <tr>
-                            <td>Base esperience</td>
-                            <td>:</td>
-                            <td>39</td>
-                        </tr>
-                        <tr>
-                            <td>Abilities</td>
-                            <td>:</td>
-                            <td>shield-dust,run-away</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
             <section class="dialogfooter">
                 <button id="previouspokemon" class="arrowcontainer" onclick="previousPokemon()">
@@ -83,21 +60,12 @@
     </dialog>
 
     <main>
-        <div id="pokemoncontainer" class="width-control firstdiv">
-            <!-- <article class="pokemon">
-                <div class="pokeheadlines">
-                    <span>#1</span>
-                    <h2 tabindex="0">${book.name}</h2>
-                </div>
-                <div class="pokemonbackground">
-                    <img class="pokemonimage" src="./img/testpoke.png" alt="Book Image">
-                </div>
-                <div class="element">
-                    <img tabindex="0" class="sendicon" src="./img/pokeball.png" alt="Element Icon">
-                    <img tabindex="0" class="sendicon" src="./img/pokeball.png" alt="Element Icon">
-                </div>
-            </article> -->
+        <div id="loading" class="loading">
+                <img src="./img/loading.gif" alt="Loading Animation">
         </div>
+        <div id="pokemoncontainer" class="width-control firstdiv">
+        </div>
+            <button class="load-more-button" id="loadMoreBtn" onclick="loadMorePokemon()">Load more</button>
     </main>
 
     <footer>

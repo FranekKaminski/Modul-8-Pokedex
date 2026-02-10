@@ -26,8 +26,9 @@ dialog:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
     background: linear-gradient(180deg, #FFF 0%, #F6F8FC 28%, #DDE7F5 72%);
+    gap: 10px;
 }
 
 .fixedimageheight {
@@ -60,7 +61,7 @@ dialog:focus {
 }
 
 .closebuttonbg:hover {
-    background: rgba(18, 70, 88);
+    background: rgb(197, 197, 197);
     cursor: pointer;
 }
 
@@ -75,7 +76,6 @@ dialog:focus {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 40px;
 }
 
 .dialognav p {
@@ -86,8 +86,7 @@ dialog:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 260px;
-    margin-top: 45px;
+    width: 100%;
     font-size: 18px;
 }
 
@@ -97,13 +96,17 @@ dialog:focus {
 
 .arrowcontainer {
     background: rgba(253, 91, 79, 0.1);
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.3s;
+}
+
+.arrowcontainer img {
+    width: 20px;
 }
 
 .arrowcontainer:hover {
@@ -121,32 +124,121 @@ button {
 }
 
 .pokemoncontent {
-    background: grey;
-    height: 150px;
+    background: linear-gradient(180deg, #fbfdff 0%, #eef6fb 100%);
+    height: auto;
     width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(6, 20, 30, 0.06);
 }
 
 .pokemondetails {
-    background: rgb(218, 122, 122);
-    height: 50px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(6, 20, 30, 0.06);
+    color: #062a33;
     width: 100%;
+    min-height: 64px;
 }
 
-.tab_btn {
-    background-color: black;
-    color: whitesmoke;
+.pokemondetails .tab_btn {
+    background: transparent;
+    color: #073043;
     margin: 0;
-    border: unset;
-    flex: 1;
-    padding: 4px;
-    border-bottom: 2px solid transparent;
+    border: 1px solid transparent;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: all 0.18s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.tab_btn:hover {
+.pokemondetails .tab_btn:not(.tab_btn_active):hover {
+    background: rgba(7, 48, 67, 0.06);
+    border-color: rgba(7, 48, 67, 0.09);
+    transform: translateY(-1px);
     cursor: pointer;
-    border-bottom: 2px solid #f5f5f5;
 }
 
-.tab_btn_active {
-    border-bottom: 2px solid var(--prime_red);
+.pokemondetails .tab_btn_active:hover {
+    background: var(--prime_red, #fd5b4f);
+    color: #ffffff;
+    transform: none;
+    cursor: default;
+}
+
+.pokemondetails .tab_btn:focus-visible {
+    outline: 3px solid rgba(7, 48, 67, 0.12);
+    outline-offset: 4px;
+}
+
+.pokemondetails .tab_btn_active {
+    background: var(--prime_red, #fd5b4f);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 8px 18px rgba(253, 91, 79, 0.18);
+}
+
+.pokemondetails .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.pokemondetails .details-table th,
+.pokemondetails .details-table td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid rgba(6, 20, 30, 0.06);
+}
+
+.pokemondetails .details-table tbody tr:nth-child(even) {
+    background: rgba(6, 20, 30, 0.02);
+}
+
+#pokemoncontent table th,
+#pokemoncontent table td {
+    color: #000;
+    font-size: 14px;
+}
+
+#fixedimageheight {
+    border-radius: 10px;
+}
+
+#pokemonName {
+    font-size: 20px;
+}
+
+.evo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.evo-chain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.evo-item img {
+    width: 40px;
+}
+.evo-item p {
+    color: black;
+    font-size: 16px;
+}
+
+.evo-chain span {
+    color: black;
 }

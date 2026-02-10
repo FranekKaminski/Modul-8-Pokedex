@@ -69,7 +69,7 @@ function resetSearch() {
 function showSearchResults(searchTerm) {
     let visibleCount = 0;
     document.querySelectorAll(".pokemon").forEach(item => {
-        const isVisible = item.innerText.includes(searchTerm);
+        const isVisible = item.innerText.toLowerCase().includes(searchTerm);
         item.style.display = isVisible ? "flex" : "none";
         if (isVisible) visibleCount++;
     });
